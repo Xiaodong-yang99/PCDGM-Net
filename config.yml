@@ -1,4 +1,4 @@
-dataroot_gt: '/root/LDFF-Net/trainsets'
+dataroot_gt: '/trainsets'
 
 scale: 4
 
