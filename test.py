@@ -11,12 +11,12 @@ from torch.backends import cudnn
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 首先设置GPU设备
 cudnn.benchmark = True
-model_name = "LDFF_Net"
-from model.LDFF_Net import MYMODEL
+model_name = "PCDGM_Net"
+from model.PCDGM_Net import MYMODEL
 mymodel = MYMODEL(up_scale=4)
 mymodel = mymodel.to(device)
-LR_path = '/root/LDFF-Net/testests_lr_x4/SIRST_V2_targets'
-SR_path = '/root/LDFF-Net/result/LDFF_Net/SIRST_V2_targets/test1'
+LR_path = '/PCDGM-Net/testests'
+SR_path = '/PCDGM-Net/result'
 device = torch.device("cuda")
 parser = ArgumentParser()
 parser.add_argument("--epoch", type=int, default=1000)
