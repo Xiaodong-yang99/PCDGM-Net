@@ -15,8 +15,8 @@ model_name = "PCDGM_Net"
 from model.PCDGM_Net import MYMODEL
 mymodel = MYMODEL(up_scale=4)
 mymodel = mymodel.to(device)
-LR_path = '/PCDGM-Net/testests'
-SR_path = '/PCDGM-Net/result'
+LR_path = 'your LR path's
+SR_path = 'your SR path'
 device = torch.device("cuda")
 parser = ArgumentParser()
 parser.add_argument("--epoch", type=int, default=1000)
