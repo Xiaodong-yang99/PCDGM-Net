@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+*.log
+
+log/
+result/
+runs/
+wandb/
+
+.DS_Store
+Thumbs.db
