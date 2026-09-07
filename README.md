@@ -74,3 +74,7 @@ python evaluate.py \
 ## Pretrained Weights
 
 The pretrained PCDGM-Net model weight is provided in the `weight/` directory.
+
+## Acknowledgements
+
+This work is developed based on LDFF-Net. We sincerely thank the authors of LDFF-Net for sharing their code and making their implementation publicly available.
