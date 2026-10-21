@@ -15,7 +15,7 @@ model_name = "PCDGM_Net"
 from model.PCDGM_Net import MYMODEL
 mymodel = MYMODEL(up_scale=4)
 mymodel = mymodel.to(device)
-LR_path = 'your LR path's
+LR_path = 'your LR path'
 SR_path = 'your SR path'
 device = torch.device("cuda")
 parser = ArgumentParser()
