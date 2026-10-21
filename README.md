@@ -63,12 +63,12 @@ Run:
 
 ```bash
 python evaluate.py \
-/path/testests \
-/path/SR \
---lpips_weight /root/LDFF-Net/weights/LPIPS_v0.1_alex-df73285e.pth \
---dists_weight /root/LDFF-Net/weights/DISTS_weights-f5e65c96.pth \
---niqe_weight /root/LDFF-Net/weights/niqe_modelparameters.mat \
---musiq_weight /root/LDFF-Net/weights/musiq_spaq_ckpt-358bb6af.pth
+  ./testests \
+  ./SR_results \
+  --lpips_weight ./weights/LPIPS_v0.1_alex-df73285e.pth \
+  --dists_weight ./weights/DISTS_weights-f5e65c96.pth \
+  --niqe_weight ./weights/niqe_modelparameters.mat \
+  --musiq_weight ./weights/musiq_spaq_ckpt-358bb6af.pth
 ```
 
 ## Pretrained Weights
