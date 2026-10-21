@@ -149,9 +149,9 @@ if __name__ == '__main__':
     set_seed(42)
 
     # 给新模型单独命名，自动保存到新文件夹
-    model_name = "LDFF_Net_HDGM_PDRF"
+    model_name = "PCDGM_Net"
 
-    from model.LDFF_Net_HDGM_PDRF import MYMODEL
+    from model.PCDGM_Net import MYMODEL
     mymodel = MYMODEL(up_scale=4).to(device)
 
     config = OmegaConf.load("config.yml")
