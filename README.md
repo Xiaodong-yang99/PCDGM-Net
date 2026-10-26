@@ -40,31 +40,25 @@ python train.py
 
 ## Testing
 
-Before testing, open `test.py` and modify the following paths according to your local environment:
-
-```python
-LR_path = '/path/to/your/LR_images'
-SR_path = '/path/to/save/SR_results'
-```
-
-Then run:
+The test script accepts the low-resolution input directory, output directory, and model directory as command-line arguments. Each directory should contain the images directly (the script does not search recursively). For the NPU_DJI100_1 subset, run:
 
 ```bash
-python test.py
+python test.py \
+  --LR_dir ./testests_lr_x4/NPU_DJI100_1 \
+  --SR_dir ./SR_results/NPU_DJI100_1 \
+  --model_dir ./weight/PCDGM_Net
 ```
 
-The pretrained model weights are loaded according to the weight path specified in `test.py`.
+The script loads `latest.pkl` from the directory supplied to `--model_dir` and writes the reconstructed images to `--SR_dir`.
 
 ## Evaluation
 
-The reconstructed SR images can be evaluated using `evaluate.py`. The first positional argument specifies the HR/GT image directory, while the second positional argument specifies the reconstructed SR image directory.
-
-Run:
+The reconstructed SR images can be evaluated using `evaluate.py`. Its first positional argument is the HR/GT image directory and its second is the reconstructed SR image directory. The script reads image files directly from these directories and does not search recursively, so use the directory that contains the images rather than a dataset root. Ensure the two directories contain the same images in matching sorted filename order. For NPU_DJI100_1, run:
 
 ```bash
 python evaluate.py \
-  ./testests \
-  ./SR_results \
+  ./testests/NPU_DJI100_1/NPU_DJI100_1 \
+  ./SR_results/NPU_DJI100_1 \
   --lpips_weight ./weights/LPIPS_v0.1_alex-df73285e.pth \
   --dists_weight ./weights/DISTS_weights-f5e65c96.pth \
   --niqe_weight ./weights/niqe_modelparameters.mat \
@@ -73,7 +67,7 @@ python evaluate.py \
 
 ## Pretrained Weights
 
-The pretrained PCDGM-Net model weight is provided in the `weight/` directory.
+The pretrained PCDGM-Net checkpoint is tracked at `weight/PCDGM_Net/latest.pkl`. The evaluation metric weights are tracked under `weights/`. The `.pkl` and `.pth` files use Git LFS; install Git LFS and run `git lfs pull` after cloning to retrieve the weight files before testing or evaluation.
 
 ## Acknowledgements
 
